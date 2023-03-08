@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+.header {
+  position:absolute;
+  text-align: center;
+  padding: 10px 16px;
+  background: #000000;
+  color: #f1f1f1;
+  top: 0;
+  width: 100%
+
+}
+.time-send
+{
+  color: #f1f1f1;
+  height: 2rem;
+  padding: 1px 700px;
+  width: 100%;
+  align-self:  left;
+  
+}
+.bottom-line{
+  position:absolute;
+  text-align: center;
+  padding: -300px 15px;
+  bottom: -0;
+  width: 100%
+}
+.btn {
+  background-color: #B20CEC;
+  border: none;
+  color: solid #B20CEC;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+.btn:hover {
+  background-color: #590b75;
+}
+.writebox{
+  width: 60%;
+  height: 40px;
+  border-radius: 1rem 0.5rem 0.5rem 0.5rem;
+  background: #4e4e4e94;
+}
+.arrow {
+  position:absolute;
+  text-align: left;
+  top: 20px;
+  left: 20;
+  border: solid #B20CEC;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 6px;
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+body {
+  background: #000000;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  padding-top: 47rem;
+}
+.base-container {
+  width: 100%;
+}
+.friend-text-div {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.friend-text-div > img {
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.friend-text-container {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-text {
+  background: #262626;
+  border-radius: 0.5rem;
+  color: #fff;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin: 0.12rem 0.5rem;
+}
+
+.my-text-div {
+  display: flex;
+  justify-content: flex-end;
+}
+.my-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+.my-text {
+  background: linear-gradient(
+      180deg,
+      #B20CEC 0%,
+      #B20CEC 51%,
+      #B20CEC 92%
+    )
+    no-repeat center;
+  background-attachment: fixed;
+  color: #fff;
+  border-radius: 0.5rem 0.2rem 0.2rem 0.5rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin: 0.12rem 0.5rem;
+}
+
+.my-text-container > div:first-child {
+  border-radius: 0.5rem 1rem 0.2rem 0.5rem;
+}
+.my-text-container > div:last-child {
+  border-radius: 0.5rem 0.2rem 1rem 0.5rem;
+}
+.friend-text-container > div:first-child {
+  border-radius: 1rem 0.5rem 0.2rem 0.5rem;
+}
+.friend-text-container > div:last-child {
+  border-radius: 0.5rem 0.2rem 0.5rem 1rem;
+}
