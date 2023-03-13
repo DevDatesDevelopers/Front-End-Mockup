@@ -62,7 +62,10 @@
 }
 
 
-.btn:hover {
+.btn1:hover {
+  background-color: #590b75;
+}
+.btn2:hover {
   background-color: #590b75;
 }
 .writebox{
