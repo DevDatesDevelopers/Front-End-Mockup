@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import GenderPicker from '../views/GenderPicker.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+
+  {
+    path: '/genderPicker',
+    name: 'genderPicker',
+    component: GenderPicker
   }
 ]
 
