@@ -3,6 +3,7 @@
   <nav class="bg-black text-white">
     <router-link to="/">Home</router-link> |
 <<<<<<< HEAD
+<<<<<<< HEAD
     <router-link to="/about">About</router-link>
     <router-link to="/Interests">Interests</router-link>
 =======
@@ -10,6 +11,11 @@
     <router-link to="/profile">Profile</router-link>
     <router-link to="/genderPicker">Gender</router-link>
     <router-link to="/Interests">Interests</router-link>
+>>>>>>> dd7fd671dde634906ae8208185a3b2d6b4d22971
+=======
+    <router-link to="/about">About</router-link> |
+    <router-link to="/profile">Profile</router-link>
+    <router-link to="/genderPicker">Gender</router-link>
 >>>>>>> dd7fd671dde634906ae8208185a3b2d6b4d22971
   </nav>
   <router-view/>
