@@ -6,6 +6,12 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+
+  {
+    path: '/genderPicker',
+    name: 'genderPicker',
+    component: GenderPicker
   }
 ]
 

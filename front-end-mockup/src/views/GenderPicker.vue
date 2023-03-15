@@ -151,10 +151,6 @@ var buttonn = document.querySelector(".woman");
 
 
 
-.body {
-   
-    background: black;
-}
 
 .back {
     width: 65px;
