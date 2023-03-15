@@ -4,24 +4,34 @@
       <img :src="require(`@/assets/images/${profile.image}`)" class="min-w-[400px] self-center">
       <section class="absolute top-[25rem] pt-20 w-full h-fit bg-black rounded-t-[2rem] border-t-8 border-black">
         <div class="flex justify-between px-10 absolute w-full -top-8">
-          <div class="bg-primary hover:bg-[#DF8CFC] cursor-pointer rounded-full aspect-square w-[4.5rem] flex items-center justify-center" @click="nextProfile()">
+          <div
+            class="bg-primary hover:bg-[#DF8CFC] cursor-pointer rounded-full aspect-square w-[4.5rem] flex items-center justify-center"
+            @click="nextProfile()">
             <Icon icon="fa6-solid:x" class="text-3xl aspect-square" />
           </div>
-          <div class="bg-primary hover:bg-[#DF8CFC] cursor-pointer rounded-full aspect-square w-[4.5rem] flex items-center justify-center" @click="prevProfile()">
+          <div
+            class="bg-primary hover:bg-[#DF8CFC] cursor-pointer rounded-full aspect-square w-[4.5rem] flex items-center justify-center"
+            @click="prevProfile()">
             <Icon icon="fa6-solid:heart" class="text-3xl" />
           </div>
         </div>
         <div class="absolute top-2 left-0 right-0 h-[0.15rem] w-1/3 mx-auto bg-[#DF8CFC]"></div>
-        <div class="flex px-10 mb-8">
-          <div class="flex flex-col text-primary">
-            <h1 class="text-3xl font-semibold">{{ profile.title }}</h1>
+        <div class="flex flex-row justify-between text-primary px-10 mb-8 w-full">
+          <div>
+            <h1 class="text-2xl font-semibold">{{ profile.title }}</h1>
             <h3 class="text-1xl">{{ profile.subtitle }}</h3>
           </div>
+          <div class="border-[1px] rounded-2xl p-1 text-2xl w-14 aspect-square flex justify-center items-center">
+            <Icon icon="fa6-solid:paper-plane" />
+          </div>
         </div>
-        <div class="flex px-10 mb-8">
-          <div class="flex flex-col text-primary">
+        <div class="flex flex-row justify-between text-primary px-10 mb-8">
+          <div>
             <h2 class="text-1xl font-bold">Location</h2>
             <h3 class="text-1xl">{{ profile.location }}</h3>
+          </div>
+          <div class="rounded-2xl p-2 px-3 bg-primary bg-opacity-30 text-base w-fit h-1/2 flex justify-center items-center">
+            <Icon class="mr-1" icon="fa6-solid:location-dot" /> 1km
           </div>
         </div>
         <div class="flex px-10 mb-8">
@@ -131,11 +141,11 @@ const profiles = ref([
   },
 ]);
 
-function nextProfile(){
+function nextProfile() {
   profileIndex.value = profileIndex.value == profiles.value.length - 1 ? 0 : profileIndex.value + 1;
 }
 
-function prevProfile(){
+function prevProfile() {
   profileIndex.value = profileIndex.value == 0 ? profiles.value.length - 1 : profileIndex.value - 1;
 }
 </script>
