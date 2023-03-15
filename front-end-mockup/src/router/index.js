@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import GenderPicker from '../views/GenderPicker.vue'
 
 const routes = [
   {
