@@ -95,7 +95,24 @@ export default {
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 
-
+.flexContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 90px;
+  
+}
+.item {
+  margin-right: 12%;
+  height: 90px;
+  text-align: center;
+  line-height: 20px;
+  
+ 
+}
 
 
 
@@ -137,11 +154,13 @@ export default {
     color: #B20CEC;
     background: transparent;
     font-size: 1.3em;
+    
+    
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 45px;
+    right: 10%;
 
-    margin: 45px 20px;
+    
     
     
 }
@@ -186,13 +205,18 @@ color: #B20CEC;
     /* container */
 
 box-sizing: border-box;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-left: 10%;
 
 
-position: absolute;
+/*position: absolute;
 left: 10.67%;
 right: 10.67%;
 top: 33.25%;
 bottom: 59.61%;
+*/
 
 /* default black
 
@@ -214,13 +238,11 @@ border-radius: 15px;
 }
 
 
-#woman.checked:after {
+#woman.checked::after {
   
     content: "✔️";
-    position: absolute;
-    left: 100%;
-    top: 20%;
-    margin-left: 10px;
+   
+   
 }
 
 .textWoman {
@@ -244,14 +266,18 @@ border-radius: 15px;
 #man {
 
   box-sizing: border-box;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
     /* container */
  
- position: absolute;
+ /*position: absolute;
  left: 10.67%;
  right: 10.67%;
  top: 41.63%;
  bottom: 51.23%;
+ */
  
  /* Default purple
  
@@ -276,10 +302,8 @@ border-radius: 15px;
  
  #man.checked:after {
     content: "✔️";
-    position: absolute;
-    left: 100%;
-    top: 20%;
-    margin-left: 10px;
+    
+   
 }
 
  .textMan {
@@ -307,15 +331,17 @@ border-radius: 15px;
 #dropdown {
     box-sizing: border-box;
 
-    position: absolute;
+    /*position: absolute;
     left: 10.67%;
     right: 10.67%;
     top: 50%;
     bottom: 42.86%;
+    */
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 10%;
     border-radius: 1em;
     /* Default purple
     
@@ -337,10 +363,7 @@ border-radius: 15px;
 #dropdown.checked:after {
   
   content: "✔️";
-  position: absolute;
-  left: 100%;
-  top: 20%;
-  margin-left: 10px;
+  
 }
 
 .select {
@@ -370,15 +393,16 @@ border-radius: 15px;
 .caret {
     width: 0;
     height: 0;
+   
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 6px solid #fff;
     transition: 0.3s;
 
+    
     position: absolute;
-    right: 30px; 
-    top: 50%;
-    transform: translateY(-50%);
+    right:17%;
+    
 }
 
 .caret-rotate {
@@ -390,14 +414,18 @@ border-radius: 15px;
     padding: 0.2em 0.5em;
     background: #323741;
     border: 1px #363a43 solid;
-    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-    border-radius: 0.5em;
+    border-radius: 1em;
     color: #9fa5b5;
+    
+   
     position: absolute;
-    top: 3em;
+    top: 30em;
     left: 50%;
     width: 100%;
     transform: translateX(-50%);
+    
+   
+    
     opacity: 0;
     display: none;
     transition: 0.2s;
@@ -429,7 +457,7 @@ top: 708px;*/
 
 position: fixed;
 bottom: 10%;
-left: 50%;
+left: 45%;
 width: 295px;
 height: 56px;
 transform: translateX(-50%);
