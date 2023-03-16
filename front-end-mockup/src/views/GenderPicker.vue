@@ -1,150 +1,92 @@
 <template>
-   
-   <button class = "back"><ion-icon name="chevron-back"></ion-icon></button>
-   
-   <button class = "skip">Skip</button>
-
-   <h1 class = "header">I am a</h1>
-
-   
-       <button class="woman" onclick="changeColor()">
-           <h1 class = "textWoman">Woman</h1>
-       </button>
-
-       <button class="man" onclick="changeColor2()">
-           <h1 class = "textMan">Man</h1>
-       </button>
-
-
-       <div class="dropdown">
-           <div class="select" onclick="changeColor3()">
-               <span class="selected">Choose another</span>
-               <div class="caret"></div>
-           </div>
-           <ul class="menu">
-               <li>Pedalche</li>
-               <li>Nejen</li>
-               <li>Smeshnik</li>
-               <li class="active">Gei</li>
-               <li>Pan sexual</li>
-           </ul>
-       </div>
-
-       <button class = "continue">
-           <h1 class = "textConti">Continue</h1>
-       </button>
-
+  <div>
+    <button class="back">
+      <div class="arrow">
+      
+      </div>
+    </button>
+    <button class="skip">Skip</button>
+    <h1 class="header">I am a</h1>
+    <button class="woman" @click="changeColor" :class="{ checked: womanChecked }">
+      <h1 :class="{textWoman: true}">Woman</h1>
+    </button>
+    <button class="man" @click="changeColor2" :class="{ checked: manChecked }">
+      <h1 :class="{textMan: true}">Man</h1>
+    </button>
+    <div class="dropdown" @click="changeColor3" :class="{ checked: dropdownChecked }">
+      <div class="select" :class="{ 'select-clicked': dropdownClicked }">
+        <span class="selected">{{ selected }}</span>
+        <div class="caret" :class="{ 'caret-rotate': dropdownClicked }"></div>
+      </div>
+      <ul class="menu" :class="{ 'menu-open': dropdownClicked }">
+        <li v-for="(option, index) in options" :key="index" :class="{ active: option.active }" @click="selectOption(option)">
+          {{ option.name }}
+        </li>
+      </ul>
+    </div>
+    <button class="continue" :disabled="continueDisabled">
+      <h1 class="textConti">Continue</h1>
+    </button>
+  </div>
 </template>
 
-<script scope>
- const button = document.querySelector(".woman");
-const heading = document.querySelector(".textWoman");
+<script>
 
-const button2 = document.querySelector(".man");
-const heading2 = document.querySelector(".textMan");
-
-const dropdown = document.querySelector(".dropdown");
-const dropdownjr = document.querySelector(".select");
-const dropText = document.querySelector(".selected");
-
-button.addEventListener("click", changeColor, { once: true })
-
-function changeColor() {
-    if(button.style.backgroundColor === 'rgb(30, 30, 30)'){
-        button.style.backgroundColor = "#B20CEC";
-        heading.style.color = "black";
-        
+export default {
+  data() {
+    return {
+      womanChecked: false,
+      manChecked: false,
+      dropdownClicked: false,
+      dropdownChecked:false,
+      options: [
+        { name: "Pedalche", active: false },
+        { name: "Nejen", active: false },
+        { name: "Smeshnik", active: false },
+        { name: "Gei", active: true },
+        { name: "Pan sexual", active: false }
+      ],
+      selected: "Choose another"
+    };
+  },
+  computed: {
+    continueDisabled() {
+      return !this.womanChecked && !this.manChecked && this.selected === "Choose another";
     }
-    else{
-        button.style.backgroundColor = 'rgb(30, 30, 30)';
-        heading.style.color = "#B20CEC";
+  },
+  methods: {
+    changeColor() {
+      this.womanChecked = true;
+      this.manChecked = false;
+      this.dropdownChecked = false;
+    },
+    changeColor2() {
+      this.manChecked = true;
+      this.womanChecked = false;
+      this.dropdownChecked = false;
+    },
+    changeColor3() {
+      this.manChecked = false;
+      this.womanChecked = false;
+      this.dropdownChecked = true;
+      this.dropdownClicked = !this.dropdownClicked;
+
+      
+    },
+    selectOption(option) {
+      this.selected = option.name;
+      this.options.forEach(option => {
+        option.active = false;
+      });
+      option.active = true;
     }
-}
+  }
+};
 
-
-
-button2.addEventListener("click", changeColor2, { once: true })
-
-function changeColor2() {
-    if(button2.style.backgroundColor === 'rgb(30, 30, 30)'){
-        button2.style.backgroundColor = "#B20CEC";
-        heading2.style.color = "black";
-        
-    }
-    else{
-        button2.style.backgroundColor = 'rgb(30, 30, 30)';
-        heading2.style.color = "#B20CEC";
-    }
-}
-
-dropdown.addEventListener("click", changeColor3, { once: true })
-
-function changeColor3() {
-    if(button2.style.backgroundColor === "rgb(30, 30, 30)" && button.style.backgroundColor === "rgb(30, 30, 30)"){
-        
-        dropdown.style.backgroundColor = "#B20CEC";
-        dropdownjr.style.backgroundColor = "#B20CEC";
-        dropText.style.color = "black";
-    }
-    else{
-
-        dropdown.style.backgroundColor = "rgb(30, 30, 30)";
-        dropdownjr.style.backgroundColor = "rgb(30, 30, 30)";
-        dropText.style.color = "#B20CEC";
-    }
-       
-        
-    
-}
-
-var buttonn = document.querySelector(".woman");
-    buttonn.addEventListener('click', () => {
-        buttonn.classList.toggle("checked");
-    })
-    
-
-
-
-    var buttonn2 = document.querySelector(".man");
-    buttonn2.addEventListener('click', () => {
-        buttonn2.classList.toggle("checked");
-    })
-
-
-
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    dropdowns.forEach(dropdown => {
-    const select = dropdown.querySelector('.select');
-    const caret = dropdown.querySelector('.caret');
-    const menu = dropdown.querySelector('.menu');
-    const options = dropdown.querySelectorAll('.menu li');
-    const selected = dropdown.querySelector('.selected');
-
-
-    select.addEventListener('click', () =>{
-        select.classList.toggle('select-clicked');
-        caret.classList.toggle('caret-rotate');
-        menu.classList.toggle('menu-open');
-    })
-
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            selected.innerText = option.innerText;
-            select.classList.remove('select-clicked');
-            caret.classList.remove('caret-rotate');
-            menu.classList.remove('menu-open');
-
-            options.forEach(option => {
-                option.classList.remove('active');
-            })
-            option.classList.add('active');
-        })
-    })
-})
 </script>
 
 <style scoped>
+
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 
@@ -159,7 +101,18 @@ var buttonn = document.querySelector(".woman");
     border: none;
     border-radius: 15px;
     font-size: 1.3em;
-    margin: 40px 20px;
+    margin: 30px 20px;
+    
+}
+.arrow{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 73px;
+    left: 46px;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    transform: rotate(-50deg);
 }
 
 .back:active {
@@ -168,6 +121,10 @@ var buttonn = document.querySelector(".woman");
     
 }
 
+.continue:disabled {
+  background-color: #a6a6a6;
+  color: #808080;
+}
 .skip {
     width: 65px;
     height: 50px;
@@ -243,8 +200,17 @@ border-radius: 15px;
 
 
 }
+.woman.checked{
+  background: #B20CEC;
+  
+}
+.checked .textWoman {
+  color:#1E1E1E; /* change the color to whatever you like */
+}
+
 
 .woman.checked:after {
+  
     content: "✔️";
     position: absolute;
     left: 100%;
@@ -293,6 +259,14 @@ border-radius: 15px;
  
  
  }
+
+ .man.checked{
+  background: #B20CEC;
+  
+}
+.checked .textMan {
+  color:#1E1E1E; /* change the color to whatever you like */
+}
  
  .man.checked:after {
     content: "✔️";
@@ -333,6 +307,10 @@ border-radius: 15px;
     top: 50%;
     bottom: 42.86%;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1em;
     /* Default purple
     
     green text and button collor
@@ -343,9 +321,25 @@ border-radius: 15px;
     border-radius: 15px;
 }
 
+.dropdown.checked{
+  background: #B20CEC;
+}
+.checked .select{
+  color:#1E1E1E;
+}
 
+.dropdown.checked:after {
+  
+  content: "✔️";
+  position: absolute;
+  left: 100%;
+  top: 20%;
+  margin-left: 10px;
+}
 
 .select {
+    
+
     background:  transparent;
     color: #B20CEC;
     display: flex;
@@ -354,12 +348,18 @@ border-radius: 15px;
     border-radius: 1.5em;
     padding: 1.5em;
     transition: 0.3s;
+  
+    
+    
+
 
    font-family: 'Poppins', sans-serif;
    font-weight: 400;
    font-size: 1.1em;
    line-height: 20%;
 }
+
+
 
 .caret {
     width: 0;
@@ -368,6 +368,11 @@ border-radius: 15px;
     border-right: 5px solid transparent;
     border-top: 6px solid #fff;
     transition: 0.3s;
+
+    position: absolute;
+    right: 30px; 
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .caret-rotate {
@@ -391,6 +396,8 @@ border-radius: 15px;
     display: none;
     transition: 0.2s;
     z-index: 1;
+
+    
 }
 .menu li {
     font-family: 'Poppins', sans-serif;
