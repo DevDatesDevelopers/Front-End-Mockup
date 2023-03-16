@@ -7,13 +7,15 @@
     </button>
     <button class="skip">Skip</button>
     <h1 class="header">I am a</h1>
-    <button class="woman" @click="changeColor" :class="{ checked: womanChecked }">
+
+    <div class="flexContainer">
+      <button class = "item" id="woman" @click="changeColor" :class="{ checked: womanChecked }">
       <h1 :class="{textWoman: true}">Woman</h1>
     </button>
-    <button class="man" @click="changeColor2" :class="{ checked: manChecked }">
+    <button class = "item" id="man" @click="changeColor2" :class="{ checked: manChecked }">
       <h1 :class="{textMan: true}">Man</h1>
     </button>
-    <div class="dropdown" @click="changeColor3" :class="{ checked: dropdownChecked }">
+    <div class = "item" id="dropdown" @click="changeColor3" :class="{ checked: dropdownChecked }">
       <div class="select" :class="{ 'select-clicked': dropdownClicked }">
         <span class="selected">{{ selected }}</span>
         <div class="caret" :class="{ 'caret-rotate': dropdownClicked }"></div>
@@ -24,6 +26,9 @@
         </li>
       </ul>
     </div>
+    </div>
+    
+
     <button class="continue" :disabled="continueDisabled">
       <h1 class="textConti">Continue</h1>
     </button>
@@ -175,7 +180,7 @@ color: #B20CEC;
 }
 
 
-.woman {
+#woman {
 
 
     /* container */
@@ -200,7 +205,7 @@ border-radius: 15px;
 
 
 }
-.woman.checked{
+#woman.checked{
   background: #B20CEC;
   
 }
@@ -209,7 +214,7 @@ border-radius: 15px;
 }
 
 
-.woman.checked:after {
+#woman.checked:after {
   
     content: "✔️";
     position: absolute;
@@ -236,8 +241,9 @@ border-radius: 15px;
 }
 
 
-.man {
+#man {
 
+  box-sizing: border-box;
 
     /* container */
  
@@ -260,7 +266,7 @@ border-radius: 15px;
  
  }
 
- .man.checked{
+ #man.checked{
   background: #B20CEC;
   
 }
@@ -268,7 +274,7 @@ border-radius: 15px;
   color:#1E1E1E; /* change the color to whatever you like */
 }
  
- .man.checked:after {
+ #man.checked:after {
     content: "✔️";
     position: absolute;
     left: 100%;
@@ -298,7 +304,7 @@ border-radius: 15px;
 
 
 
-.dropdown {
+#dropdown {
     box-sizing: border-box;
 
     position: absolute;
@@ -321,14 +327,14 @@ border-radius: 15px;
     border-radius: 15px;
 }
 
-.dropdown.checked{
+#dropdown.checked{
   background: #B20CEC;
 }
 .checked .select{
   color:#1E1E1E;
 }
 
-.dropdown.checked:after {
+#dropdown.checked:after {
   
   content: "✔️";
   position: absolute;
