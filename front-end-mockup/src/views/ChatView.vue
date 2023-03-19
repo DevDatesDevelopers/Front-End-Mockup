@@ -109,6 +109,7 @@
   background-color: #590b75;
 }
 .writebox{
+  flex:2;
   position:static;
   width: 60%;
   height: 90px;
