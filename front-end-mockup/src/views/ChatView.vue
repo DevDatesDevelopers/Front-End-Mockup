@@ -54,15 +54,15 @@
 
 }
 .header img {
-  position: absolute;
-  height: 5rem;
+  position: fixed;
+  height: 3.5rem;
   align-self: flex-end;
-  left: 350px;
-  top: 4px;
+  left: 180px;
+  top: 1px;
 }
  .time-send
 {
-  color: #f1f1f1;
+  color: #ffffff;
   height: 2rem;
   font-size: 2rem;
   align-self: center;
@@ -72,9 +72,13 @@
 }
 .bottom-line{
   position:fixed;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   text-align:center;
-  bottom: 15px;
+  bottom: 10px;
   width: 100%
+  
 }
 .btn1 {
   background-color: #B20CEC;
@@ -87,7 +91,6 @@
   border-radius: 1rem 0.5rem 0.5rem 0.5rem;
 }
 .btn2 {
-  position: absolute;
   background-color: #B20CEC;
   border: none;
   color: solid #B20CEC;
@@ -95,7 +98,6 @@
   font-size: 3.4rem;
   color: #000000;
   cursor: pointer;
-  right: 35px;
   border-radius: 1rem 0.5rem 0.5rem 0.5rem;
 }
 
@@ -145,28 +147,28 @@ body {
 }
 
 .friend-text-div > img {
-  position: absolute;
-  height: 8rem;
+  position: fixed;
+  height: 5rem;
   align-self: flex-end;
-  bottom: 280px;
+  bottom: 260px;
 }
 
 .friend-text-container {
-  position: absolute;
+  position: fixed;
   width: 10rem;
   display: flex;
   flex-direction: column;
-  bottom: 350px;
-  left: 150px;
+  bottom: 280px;
+  left: 80px;
 }
 
 .friend-text {
   background: #262626;
   border-radius: 0.5rem;
   color: #fff;
-  height: 5rem;
+  height: 3.5rem;
   width: 15rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   margin: 0.12rem 0.5rem;
 }
@@ -176,12 +178,11 @@ body {
   justify-content: flex-end;
 }
 .my-text-container {
-  position: absolute;
+  position: fixed;
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
-  bottom: 200px;
-  
+  bottom: 160px;
+  right:20px;
 }
 
 
@@ -196,7 +197,7 @@ body {
   background-attachment: fixed;
   color: #fff;
   border-radius: 0.5rem 0.2rem 0.2rem 0.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   height: 5rem;
   width: 15rem;
   padding: 0.5rem 1rem;
