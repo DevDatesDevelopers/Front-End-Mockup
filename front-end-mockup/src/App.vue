@@ -26,8 +26,10 @@
 
 #app {
   max-width: 400px;
+  min-height: 100vh;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--clr-primary);
 }
 </style>
