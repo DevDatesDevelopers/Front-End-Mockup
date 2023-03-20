@@ -1,497 +1,177 @@
 <template>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+<div class = "container">
+  <button type="submit" class="Back-Button" >&lt;</button>
 
-  <button type="submit" class="Back-Button">&lt;</button>
-
-  <div id="information">
-    <a ref="selectButton" class="Selection">Please select only five interests</a>
-    <h1>Your interests</h1>
+    <h1 >Your interests</h1>
     <a class="text">Select a few of your interests and let everyone know what you're passionate about.</a>
-  </div>
 
-  <div>
     <div v-for="(button, index) in buttons" :key="index">
-      <button :id="'button'+(index+1)" @click="interactsButtons('button'+(index+1))" :toggle="false" :class="{'Photography-Button': index === 0, 'Streaming-Button': index === 1,  'Cooking-Button': index === 2 , 'Running-Button': index === 3 , 'Painting-Button': index === 4, 'Football-Button': index === 5,  'Drink-Button': index === 6,  'Writing-Button': index === 7,  'Reading-Button': index === 8,  'Shopping-Button': index === 9,  'Skiing-Button': index === 10, 'Tennis-Button': index === 11, 'Swimming-Button': index === 12, 'Traveling-Button': index === 13, 'Music-Button': index === 14, 'Videogames-Button': index === 15, 'Programming-Button': index === 16, 'Student-Button': index === 17}"> <span v-if="index === 0"><i class="fa-solid fa-camera"></i> </span>  
-    <span v-if="index === 1"><i class="fa-solid fa-microphone-lines"></i> </span>  
-    <span v-if="index === 2"><i class="fa-solid fa-utensils"></i> </span>  
-    <span v-if="index === 3"><i class="fa-solid fa-person-running"></i> </span>  
-    <span v-if="index === 4"><i class="fa-solid fa-palette"></i> </span>  
-    <span v-if="index === 5"><i class="fa-solid fa-futbol"></i> </span>  
-    <span v-if="index === 6"><i class="fa-solid fa-martini-glass-empty"></i> </span>  
-    <span v-if="index === 7"><i class="fa-solid fa-pencil"></i> </span>  
-    <span v-if="index === 8"><i class="fa-solid fa-book"></i> </span>  
-    <span v-if="index === 9"><i class="fa-solid fa-shopping"></i> </span>  
-    <span v-if="index === 10"><i class="fa-solid fa-skiing"></i> </span>  
-    <span v-if="index === 11"><i class="fa-solid fa-table-tennis-paddle-ball"></i> </span>  
-    <span v-if="index === 12"><i class="fa-solid fa-person-swimming"></i> </span>  
-    <span v-if="index === 13"><i class="fa-solid fa-location-dot"></i> </span>  
-    <span v-if="index === 14"><i class="fa-solid fa-music"></i> </span>  
-    <span v-if="index === 15"><i class="fa-solid fa-gamepad"></i> </span>  
-    <span v-if="index === 16"><i class="fa-brands fa-stack-overflow"></i> </span>  
-    <span v-if="index === 17"><i class="fa-solid fa-school"></i> </span>  
-    {{button}}</button>
+      <button :id="'button'+(index+1)" @click="interactsButtons('button'+(index+1))" :toggle="false" :class="{'Design-Button Design-Button-1': index === 0, 
+      'Design-Button Design-Button-2': index === 1, 'Design-Button Design-Button-3': index === 2 , 'Design-Button Design-Button-4': index === 3 , 
+      'Design-Button Design-Button-5': index === 4, 'Design-Button Design-Button-6': index === 5, 'Design-Button Design-Button-7': index === 6,  
+      'Design-Button Design-Button-8': index === 7, 'Design-Button Design-Button-9': index === 8, 'Design-Button Design-Button-10': index === 9,  
+      'Design-Button Design-Button-11': index === 10, 'Design-Button Design-Button-12': index === 11, 'Design-Button Design-Button-13': index === 12, 
+      'Design-Button Design-Button-14': index === 13, 'Design-Button Design-Button-15': index === 14, 'Design-Button Design-Button-16': index === 15,
+      'Design-Button Design-Button-17': index === 16, 'Design-Button Design-Button-18': index === 17}">
+       <span v-if="index === 0"> <Icon inline icon="mdi-light:camera" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 1"> <Icon inline icon="mdi-light:monitor" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 2"> <Icon inline icon="ph:bowl-food" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 3"> <Icon inline icon="ph:person-simple-run" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 4"> <Icon inline icon="ph:paint-brush" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 5"> <Icon inline icon="ph:soccer-ball" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 6"> <Icon inline icon="arcticons:drinkable" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 7"> <Icon inline icon="ph:pen" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 8"> <Icon inline icon="ph:book" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 9"> <Icon inline icon="ph:shopping-cart" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 10"> <Icon inline icon="ph:snowflake" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 11"> <Icon inline icon="ph:tennis-ball" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 12"> <Icon inline icon="ph:swimming-pool" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 13"> <Icon inline icon="ph:airplane" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 14"> <Icon inline icon="ph:music-notes" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 15"> <Icon inline icon="ph:game-controller" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 16"> <Icon inline icon="carbon:cics-program" class = "Design-Icon"></Icon></span>  
+       <span v-if="index === 17"> <Icon inline icon="ph:student" class = "Design-Icon"></Icon></span>  
+      
+      {{button}}
+    </button>
     </div>
-    <button ref="submitButton" class="Continue-Button" disabled>Submit</button>
-  </div>
 
+    <button ref="submitButton" class="Continue-Button" disabled>Submit</button>
+      <a ref="selectButton" class="Selection">Please select only five interests</a> 
+  </div>
 </template>
 
 <script>
+import { Icon } from '@iconify/vue';
 export default {
+  components: {
+  Icon
+  },
   data() {
-  backgroundColor:"#16a085"
     return {
       buttonBr: Array(18).fill(0),
-      buttons: ["Photography", "Streaming", "Cooking", "Running", "Painting", "Football", "Drink", "Writing", "Reading", "Shopping", "Skiing", "Tennis", "Swimming", "Traveling", "Music", "Videogames", "Programming", "Student"]
+      buttons: ["Photography", "Streaming", "Cooking", "Running", "Painting", 
+      "Football", "Drink", "Writing", "Reading", "Shopping", "Skiing",
+      "Tennis", "Swimming", "Traveling", "Music", "Videogames", "Programming", "Student"]
     };
   },
   methods: {
     interactsButtons(buttonName) {
       const button = document.getElementById(buttonName);
       const index = parseInt(buttonName.replace("button", "")) - 1;
-      if (button.getAttribute("toggle") == "false") {
-        button.style.backgroundColor = "#B20CEC";
-        button.style.color = "#1E1E1E";
-        button.style.border = "1px solid #1E1E1E";
-        button.style.boxShadow = "5px 10px 18px #f8008850";
-        button.setAttribute("toggle", "true");
+      const toggleValue = button.getAttribute("toggle") === "true";
+
+      button.classList.toggle("Selected");
+
+      if (button.classList.contains("Selected")) {
         this.buttonBr[index]++;
       } else {
-        button.style.backgroundColor = null;
-        button.style.color = null;
-        button.style.border = null;
-        button.style.boxShadow = null;
-        button.setAttribute("toggle", "false");
         this.buttonBr[index]--;
       }
 
       const submitButton = this.$refs.submitButton;
       const selectButton = this.$refs.selectButton;
       let totalSelected = 0;
+
       for (let i = 0; i < this.buttonBr.length; i++) {
         totalSelected += this.buttonBr[i];
       }
-      if (totalSelected == 5) {
+      if (totalSelected === 5) {
         submitButton.disabled = false;
-        submitButton.style.backgroundColor = "#B20CEC";
-        submitButton.style.color = "#1E1E1E";
+        submitButton.classList.add("Selected");
         selectButton.text = '';
       } else {
         submitButton.disabled = true;
-        submitButton.style.backgroundColor = null;
-        submitButton.style.color = null;
+        submitButton.classList.remove("Selected");
         selectButton.text = 'Please select only five interests';
-      }
+      } 
     },
   },
 };
 </script>
 
-
 <style scoped>
 
-div {  
-  border: 21px solid black;  
-}  
+  .container{
+    width:340px;
+    background:black;
+    display: flex;
+    flex-direction:row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-h1{
-    position: absolute;
-    top: 85px;
-    left: 50px;
+  h1{
+      color: #B20CEC;
+      font-size: 30px;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      width:100%;
+      margin-left: 1.5rem;
+  }
+
+  .text{
+      color: #B20CEC;
+      font-size: 13px;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+      margin-left: 1.5rem;
+      margin-top: -1rem;
+  }
+
+  .Selection{
     color: #B20CEC;
-    font-size: 30px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.styled-button {
-  background-color: #1E1E1E; 
-  color: #B20CEC;
-  border: 1px solid #EAEAE6;
-  border-radius: 12px;
-  padding: 8px 10px;
-  text-align: justify;
-  text-decoration: none;
-  font-size: 15px;
-  width: 140px;
-  height: 47px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  cursor: pointer;
-}
-
-
-.text{
-    position: absolute;
-    top: 150px;
-    left: 55px;
-    color: #B20CEC;
-    font-size: 16px;
+    font-size: 12px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-}
-
-.Selection{
-  position: absolute;
-  top: 815px;
-  left: 109px;
-  color: #B20CEC;
-  font-size: 12px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-}
+  }
 
   .Back-Button{
     background-color: #B20CEC; 
     color: #1E1E1E;
     border: 1px solid black;
-    position: absolute;
-    top: 30px;
-    left: 50px;
     border-radius: 12px;
-    text-align: 30px;
-    text-decoration: none;
     font-size: 20px;
     width: 48px;
     height: 44px;
-    cursor: pointer;
+    margin-right: 15rem;
+    margin-top: 2rem;
   }
 
-  .Photography-Button{
+  .Design-Button{
+    text-align: left;
+    width: 140px;
+    height: 47px;
+    border: 1px solid #EAEAE6;
+    border-radius: 12px;
     background: #1E1E1E; 
     color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 230px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
     font-size: 15px;
-    width: 140px;
-    height: 47px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
   }
 
-  .Streaming-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 285px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
+  .Design-Icon{
+      display: inline;
+      font-size: 1.5rem; 
+      padding-left: 5px;
+      padding-bottom: 5px;
   }
 
-  .Cooking-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 340px;
-    left: 52px;
+  button.Selected{
+    background-color: #B20CEC ; 
+    color: #1E1E1E;
+    border: 1px solid black;
     border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Running-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 395px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Painting-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 450px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Football-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 505px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Drink-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 560px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Writing-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 615px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Reading-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 670px;
-    left: 52px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Shopping-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 230px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Skiing-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 285px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Tennis-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 340px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Swimming-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 395px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Traveling-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 450px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Music-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 505px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Videogames-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 560px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Programming-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 615px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
-
-  .Student-Button{
-    background-color: #1E1E1E; 
-    color: #B20CEC;
-    border: 1px solid #EAEAE6;
-    position: absolute;
-    top: 670px;
-    left: 210px;
-    border-radius: 12px;
-    padding: 8px 10px;
-    text-align:justify;
-    text-decoration: none;
-    font-size: 15px;
-    width: 140px;
-    height: 47px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
-  }
+    box-shadow: 5px 10px 18px #f8008850;
+    }
 
   .Continue-Button{
     background-color: #141414; 
     color: #363434;
     border: 1px solid black;
-    position: absolute;
-    top: 750px;
-    left: 60px;
     border-radius: 12px;
-    padding: 8px 10px;
-    text-align:center;
-    text-decoration: none;
     font-size: 15px;
     width: 280px;
     height: 55px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    cursor: pointer;
   }
 </style>
