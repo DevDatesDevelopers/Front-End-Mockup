@@ -6,38 +6,15 @@
     <a class="text">Select a few of your interests and let everyone know what you're passionate about.</a>
 
     <div v-for="(button, index) in buttons" :key="index">
-      <button :id="'button'+(index+1)" @click="interactsButtons('button'+(index+1))" :toggle="false" :class="{'Design-Button Design-Button-1': index === 0, 
-      'Design-Button Design-Button-2': index === 1, 'Design-Button Design-Button-3': index === 2 , 'Design-Button Design-Button-4': index === 3 , 
-      'Design-Button Design-Button-5': index === 4, 'Design-Button Design-Button-6': index === 5, 'Design-Button Design-Button-7': index === 6,  
-      'Design-Button Design-Button-8': index === 7, 'Design-Button Design-Button-9': index === 8, 'Design-Button Design-Button-10': index === 9,  
-      'Design-Button Design-Button-11': index === 10, 'Design-Button Design-Button-12': index === 11, 'Design-Button Design-Button-13': index === 12, 
-      'Design-Button Design-Button-14': index === 13, 'Design-Button Design-Button-15': index === 14, 'Design-Button Design-Button-16': index === 15,
-      'Design-Button Design-Button-17': index === 16, 'Design-Button Design-Button-18': index === 17}">
-       <span v-if="index === 0"> <Icon inline icon="mdi-light:camera" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 1"> <Icon inline icon="mdi-light:monitor" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 2"> <Icon inline icon="ph:bowl-food" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 3"> <Icon inline icon="ph:person-simple-run" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 4"> <Icon inline icon="ph:paint-brush" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 5"> <Icon inline icon="ph:soccer-ball" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 6"> <Icon inline icon="arcticons:drinkable" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 7"> <Icon inline icon="ph:pen" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 8"> <Icon inline icon="ph:book" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 9"> <Icon inline icon="ph:shopping-cart" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 10"> <Icon inline icon="ph:snowflake" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 11"> <Icon inline icon="ph:tennis-ball" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 12"> <Icon inline icon="ph:swimming-pool" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 13"> <Icon inline icon="ph:airplane" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 14"> <Icon inline icon="ph:music-notes" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 15"> <Icon inline icon="ph:game-controller" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 16"> <Icon inline icon="carbon:cics-program" class = "Design-Icon"></Icon></span>  
-       <span v-if="index === 17"> <Icon inline icon="ph:student" class = "Design-Icon"></Icon></span>  
-      
-      {{button}}
-    </button>
+       <button @click="interactsButtons(index)" :toggle="false" class="Design-Button"
+        :class="{ 'Selected': buttonBr[index] === 1 }">
+        <Icon :icon="button.icon" class="Design-Icon" /> {{ button.name }}
+      </button>
     </div>
 
-    <button ref="submitButton" class="Continue-Button" disabled>Submit</button>
-      <a ref="selectButton" class="Selection">Please select only five interests</a> 
+    <button ref="submitButton" class="Continue-Button" :class="{ 'Selected': totalSelected === 5 }"
+      :disabled="totalSelected === 5">Submit</button>
+    <a ref="selectButton" class="Selection">{{ submitButtonCaption }}</a>
   </div>
 </template>
 
@@ -50,41 +27,99 @@ export default {
   data() {
     return {
       buttonBr: Array(18).fill(0),
-      buttons: ["Photography", "Streaming", "Cooking", "Running", "Painting", 
-      "Football", "Drink", "Writing", "Reading", "Shopping", "Skiing",
-      "Tennis", "Swimming", "Traveling", "Music", "Videogames", "Programming", "Student"]
+      buttons: [
+        {
+          name: "Photography",
+          icon: "mdi-light:camera"
+        },
+        {
+          name: "Streaming",
+          icon: "mdi-light:monitor"
+        },
+        {
+          name: "Cooking",
+          icon: "ph:bowl-food"
+        },
+        {
+          name: "Running",
+          icon: "ph:person-simple-run"
+        },
+        {
+          name: "Painting",
+          icon: "ph:paint-brush"
+        },
+        {
+          name: "Football",
+          icon: "ph:soccer-ball"
+        },
+        {
+          name: "Drink",
+          icon: "arcticons:drinkable"
+        },
+        {
+          name: "Writing",
+          icon: "ph:pen"
+        },
+        {
+          name: "Reading",
+          icon: "ph:book"
+        },
+        {
+          name: "Shopping",
+          icon: "ph:shopping-cart"
+        },
+        {
+          name: "Skiing",
+          icon: "ph:snowflake"
+        },
+        {
+          name: "Tennis",
+          icon: "ph:tennis-ball"
+        },
+        {
+          name: "Swimming",
+          icon: "ph:swimming-pool"
+        },
+        {
+          name: "Traveling",
+          icon: "ph:airplane"
+        },
+        {
+          name: "Music",
+          icon: "ph:music-notes"
+        },
+        {
+          name: "Videogames",
+          icon: "ph:game-controller"
+        },
+        {
+          name: "Programming",
+          icon: "carbon:cics-program"
+        },
+        {
+          name: "Student",
+          icon: "ph:student"
+        }
+      ],
+      totalSelected: 0,
+      submitButtonCaption: "Please select only five interests"
     };
   },
   methods: {
-    interactsButtons(buttonName) {
-      const button = document.getElementById(buttonName);
-      const index = parseInt(buttonName.replace("button", "")) - 1;
-      const toggleValue = button.getAttribute("toggle") === "true";
-
-      button.classList.toggle("Selected");
-
-      if (button.classList.contains("Selected")) {
-        this.buttonBr[index]++;
+    interactsButtons(index) {
+      if (this.buttonBr[index] === 0) {
+        this.buttonBr[index] = 1;
+        this.totalSelected++;
       } else {
-        this.buttonBr[index]--;
+        this.buttonBr[index] = 0;
+        this.totalSelected--;
       }
-
-      const submitButton = this.$refs.submitButton;
-      const selectButton = this.$refs.selectButton;
-      let totalSelected = 0;
-
-      for (let i = 0; i < this.buttonBr.length; i++) {
-        totalSelected += this.buttonBr[i];
+      if (this.totalSelected === 5) {
+        this.submitButtonCaption = "";
       }
-      if (totalSelected === 5) {
-        submitButton.disabled = false;
-        submitButton.classList.add("Selected");
-        selectButton.text = '';
-      } else {
-        submitButton.disabled = true;
-        submitButton.classList.remove("Selected");
-        selectButton.text = 'Please select only five interests';
-      } 
+      else {
+        this.submitButtonCaption = "Please select only five interests";
+      }
     },
   },
 };
