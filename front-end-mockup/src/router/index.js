@@ -2,34 +2,34 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue';
 import SignUpView from '../views/SignUpView.vue';
-// import GenderPicker from '../views/GenderPicker.vue'
-// import InterestsView from '../views/InterestsView.vue'
+import GenderPicker from '../views/GenderPicker.vue'
+import InterestsView from '../views/InterestsView.vue'
 
 const routes = [{
         path: '/',
-        name: 'home',
+        name: 'Home',
         component: HomeView
     },
     {
         path: '/profile',
-        name: 'profile',
+        name: 'Profile',
         component: ProfileView,
     },
     {
-        path: '/signup',
-        name: 'signup',
+        path: '/sign-up',
+        name: 'SignUp',
         component: SignUpView,
     },
-    // {
-    //   path: '/genderPicker',
-    //   name: 'genderPicker',
-    //   component: GenderPicker
-    // },
-    // {
-    //   path: '/Interests',
-    //   name: 'Interests',
-    //   component: InterestsView
-    // }
+    {
+        path: '/gender-picker',
+        name: 'GenderPicker',
+        component: GenderPicker
+    },
+    {
+        path: '/interests',
+        name: 'Interests',
+        component: InterestsView
+    }
 ]
 
 const router = createRouter({
