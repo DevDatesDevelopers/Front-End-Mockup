@@ -457,7 +457,7 @@ top: 708px;*/
 
 position: fixed;
 bottom: 10%;
-left: 45%;
+left: 50%;
 width: 295px;
 height: 56px;
 transform: translateX(-50%);
