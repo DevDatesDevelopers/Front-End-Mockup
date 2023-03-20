@@ -1,6 +1,6 @@
 <template>
   <div v-for="(profile, index) in profiles" :key="index">
-    <div class="flex flex-col bg-black h-screen" v-if="profileIndex == index">
+    <div class="flex flex-col h-screen" v-if="profileIndex == index">
       <img :src="require(`@/assets/images/${profile.image}`)" class="min-w-[400px] self-center">
       <section class="absolute top-[25rem] pt-20 w-full h-fit bg-black rounded-t-[2rem] border-t-8 border-black">
         <div class="flex justify-between px-10 absolute w-full -top-8">
