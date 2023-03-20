@@ -9,29 +9,32 @@
     <h1 class="header">I am a</h1>
 
     <div class="flexContainer">
-      <button class = "item" id="woman" @click="changeColor" :class="{ checked: womanChecked }">
-      <h1 :class="{textWoman: true}">Woman</h1>
-    </button>
-    <button class = "item" id="man" @click="changeColor2" :class="{ checked: manChecked }">
-      <h1 :class="{textMan: true}">Man</h1>
-    </button>
-    <div class = "item" id="dropdown" @click="changeColor3" :class="{ checked: dropdownChecked }">
-      <div class="select" :class="{ 'select-clicked': dropdownClicked }">
-        <span class="selected">{{ selected }}</span>
-        <div class="caret" :class="{ 'caret-rotate': dropdownClicked }"></div>
+        <button class = "item" id="woman" @click="changeColor" :class="{ checked: womanChecked }">
+        <h1 :class="{textWoman: true}">Woman</h1>
+      </button>
+      <button class = "item" id="man" @click="changeColor2" :class="{ checked: manChecked }">
+        <h1 :class="{textMan: true}">Man</h1>
+      </button>
+      <div class = "item" id="dropdown" @click="changeColor3" :class="{ checked: dropdownChecked }">
+        <div class="select" :class="{ 'select-clicked': dropdownClicked }">
+          <span class="selected">{{ selected }}</span>
+          <div class="caret" :class="{ 'caret-rotate': dropdownClicked }"></div>
+        </div>
+        <ul class="menu" :class="{ 'menu-open': dropdownClicked }">
+          <li v-for="(option, index) in options" :key="index" :class="{ active: option.active }" @click="selectOption(option)">
+            {{ option.name }}
+          </li>
+        </ul>
       </div>
-      <ul class="menu" :class="{ 'menu-open': dropdownClicked }">
-        <li v-for="(option, index) in options" :key="index" :class="{ active: option.active }" @click="selectOption(option)">
-          {{ option.name }}
-        </li>
-      </ul>
-    </div>
+
+      <button class="continue" :disabled="continueDisabled">
+        <h1 class="textConti">Continue</h1>
+      </button>
+
     </div>
     
-
-    <button class="continue" :disabled="continueDisabled">
-      <h1 class="textConti">Continue</h1>
-    </button>
+   
+  
   </div>
 </template>
 
@@ -105,6 +108,8 @@ export default {
   margin-top: 90px;
   
 }
+
+
 .item {
   margin-right: 12%;
   height: 90px;
@@ -455,12 +460,30 @@ height: 56px;
 left: 40px;
 top: 708px;*/
 
-position: fixed;
+/*position: fixed;
 bottom: 10%;
-left: 50%;
+left: 40%;
 width: 295px;
 height: 56px;
 transform: translateX(-50%);
+*/
+
+
+
+
+margin-right: 12%;
+margin-left: 10%;
+
+margin-top: 50%;
+
+height: 90px;
+text-align: center;
+line-height: 20px;
+
+
+
+
+
 
 /* Default purple
 
