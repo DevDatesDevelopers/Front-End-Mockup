@@ -5,6 +5,7 @@
     <router-link to="/profile">Profile</router-link>
     <router-link to="/genderPicker">Gender</router-link>
     <router-link to="/Interests">Interests</router-link>
+    <router-link to="/SignUp">SignUp</router-link>
   </nav>
   <router-view/>
 </template>
