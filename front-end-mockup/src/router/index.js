@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue';
-// import GenderPicker from '../views/GenderPicker.vue'
+import GenderPicker from '../views/GenderPicker.vue'
 // import InterestsView from '../views/InterestsView.vue'
 
 const routes = [
@@ -15,11 +15,11 @@ const routes = [
     name: 'profile',
     component: ProfileView,
   },
-  // {
-  //   path: '/genderPicker',
-  //   name: 'genderPicker',
-  //   component: GenderPicker
-  // },
+  {
+    path: '/genderPicker',
+    name: 'genderPicker',
+    component: GenderPicker
+  },
   // {
   //   path: '/Interests',
   //   name: 'Interests',
