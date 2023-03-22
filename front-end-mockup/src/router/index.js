@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue';
 // import GenderPicker from '../views/GenderPicker.vue'
 // import InterestsView from '../views/InterestsView.vue'
+import MessagesListing from '../views/MessagesListing.vue';
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
   //   name: 'Interests',
   //   component: InterestsView
   // }
+  {
+    path: '/messages',
+    name: 'messages',
+    component: MessagesListing
+  },
 ]
 
 const router = createRouter({
