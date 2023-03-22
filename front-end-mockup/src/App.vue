@@ -3,9 +3,9 @@
   <nav class="bg-black text-white flex gap-4">
     <router-link to="/">Home</router-link>
     <router-link to="/profile">Profile</router-link>
-    <router-link to="/genderPicker">Gender</router-link>
-    <router-link to="/Interests">Interests</router-link>
-    <router-link to="/datepicker">DatePicker</router-link>
+    <router-link to="/gender-picker">Gender</router-link>
+    <router-link to="/interests">Interests</router-link>
+    <router-link to="/sign-up">SignUp</router-link>
   </nav>
   <router-view/>
 </template>
