@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue';
+import MessagesListing from '../views/MessagesListing.vue';
 import DatePickerView from '../views/DatePickerView.vue';
 import GenderPicker from '../views/GenderPicker.vue'
 import InterestsView from '../views/InterestsView.vue'
@@ -35,7 +36,12 @@ const routes = [{
         path: '/interests',
         name: 'Interests',
         component: InterestsView
-    }
+    },
+    {
+        path: '/messages',
+        name: 'messages',
+        component: MessagesListing
+    },
 ]
 
 const router = createRouter({
