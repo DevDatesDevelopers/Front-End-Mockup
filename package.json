@@ -1,0 +1,23 @@
+{
+  "name": "front-end-mockup",
+  "version": "1.0.0",
+  "description": "First UI Design\r Cheti",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevDatesDevelopers/Front-End-Mockup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevDatesDevelopers/Front-End-Mockup/issues"
+  },
+  "homepage": "https://github.com/DevDatesDevelopers/Front-End-Mockup#readme",
+  "dependencies": {
+    "path": "^0.12.7",
+    "stream": "0.0.2"
+  }
+}
