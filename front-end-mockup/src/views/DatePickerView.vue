@@ -90,7 +90,8 @@ hide();
 
     month = currMonth;
     year = currenYear.innerHTML;
-    console.log(month)
+    
+
     prevNextIcon.forEach(icon => {
 
 
@@ -128,7 +129,8 @@ hide();
         month = currMonth;
         year = currenYear.innerText;
         activateClass()
-console.log(month)
+
+        
     });
     });
 
@@ -148,7 +150,7 @@ console.log(month)
         
         this.className += " active";
         day = this.innerText
-        var birthdate = new Date(year, parseInt(month), parseInt(day));
+        var birthdate = new Date(year, parseInt(month + 1), parseInt(day));
       
         console.log(`Birthday is on - ${birthdate.getDate()}/${birthdate.getMonth()}/${birthdate.getFullYear()}`); 
        
