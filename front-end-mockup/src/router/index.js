@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue';
 import DatePickerView from '../views/DatePickerView.vue';
-// import GenderPicker from '../views/GenderPicker.vue'
-// import InterestsView from '../views/InterestsView.vue'
+import GenderPicker from '../views/GenderPicker.vue'
+import InterestsView from '../views/InterestsView.vue'
 import SignUpView from '../views/SignUpView.vue';
 
 const routes = [{
@@ -27,14 +27,14 @@ const routes = [{
         component: GenderPicker
     },
     {
-      path: '/datepicker',
-      name: 'datepicker',
-      component: DatePickerView,
+        path: '/datepicker',
+        name: 'datepicker',
+        component: DatePickerView,
     },
     {
-      path: '/interests',
-      name: 'Interests',
-      component: InterestsView
+        path: '/interests',
+        name: 'Interests',
+        component: InterestsView
     }
 ]
 
