@@ -150,7 +150,7 @@ hide();
         
         this.className += " active";
         day = this.innerText
-        var birthdate = new Date(year, parseInt(month + 1), parseInt(day));
+        var birthdate = new Date(year, parseInt(month), parseInt(day));
       
         console.log(`Birthday is on - ${birthdate.getDate()}/${birthdate.getMonth()}/${birthdate.getFullYear()}`); 
        
