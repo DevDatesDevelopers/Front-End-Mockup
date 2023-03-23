@@ -2,22 +2,22 @@
 <template>
   
   <div class="text-center mt-20">
-    <button @click="prevloader()" id="date" class="bottom-0 bg-zinc-900 text-primary w-72 p-3 rounded-xl text-center">
+    <button @click="prevloader()" id="date" class="bottom-0 bg-zinc-900 w-72 p-3 rounded-xl text-center">
       <span class="align-middle inline-block">
-        <svg aria-hidden="true" class="w-5 h-5 text-primary align-middle" fill="#B20CEC" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+        <svg aria-hidden="true" class="w-5 h-5 align-middle" fill="#B20CEC" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
       </span>
       <span class="align-middle inline-block ml-2">Choose birthday date</span>
   </button>
       <div id="card" class="h-4/6 bg-zinc-900 fixed w-96 rounded-3xl ml-2 bottom-0 text-center hide">
         <div id="wrapper">
-          <h1 id="birthday" class="text-primary text-sm mt-5">Birthday</h1>
+          <h1 id="birthday" class="text-sm mt-5">Birthday</h1>
             <div class="icons">
               <span id="prev-icon" class="float-left ml-5 mt-9 ">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#B20CEC" class="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
               </span>
-            <span id="current-year" class="text-primary text-3xl text-center">2023</span>
+            <span id="current-year" class="text-3xl text-center">2023</span>
             <span id="next-icon" class="float-right mr-5 mt-9 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#B20CEC" class="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -25,13 +25,13 @@
             </span>
             </div>
               <div class="text-center mt-4">
-                <span id="current-month"  class="text-primary text-md text-center">January</span>
+                <span id="current-month"  class="text-md text-center">January</span>
               </div>
         </div>
               <div class="calendar">
                 <ul class="days"></ul>
               </div>
-              <button @click="hide()" id="save-btn" class="mt-9 text-primary w-72 p-3 rounded-xl text-center">Save</button>
+              <button @click="hide()" id="save-btn" class="mt-9 w-72 p-3 rounded-xl text-center">Save</button>
     
       </div>
      

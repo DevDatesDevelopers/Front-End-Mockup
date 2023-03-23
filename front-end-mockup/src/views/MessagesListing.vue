@@ -24,7 +24,7 @@
                   <h4>{{chat.name}}</h4>
                   <p>{{chat.lastMessage}}</p>
                   <p>{{chat.timeLastSent}}</p>
-                  <p v-if="chat.unreadMessages>0" class="w-6 bg-secondary-purple text-primary font-bold rounded-full aspect-square text-center justify-self-end pt-[2px]" >{{chat.unreadMessages}}</p>
+                  <p v-if="chat.unreadMessages>0" class="w-6 bg-secondary-purple font-bold rounded-full aspect-square text-center justify-self-end pt-[2px]" >{{chat.unreadMessages}}</p>
                 </div>
             </div>
         </div>

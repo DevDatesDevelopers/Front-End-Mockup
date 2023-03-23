@@ -2,7 +2,7 @@
   <div v-for="(profile, index) in profiles" :key="index">
     <div class="flex flex-col h-screen" v-if="profileIndex == index">
       <img :src="require(`@/assets/images/${profile.image}`)" class="min-w-[400px] self-center">
-      <section class="absolute top-[25rem] pt-20 w-full h-fit bg-black rounded-t-[2rem] border-t-8 border-black">
+      <section class="absolute top-[25rem] pt-20 w-full h-fit bg-black rounded-t-[2rem] border-t-8 border-primary">
         <div class="flex justify-between px-10 absolute w-full -top-8">
           <div
             class="bg-primary hover:bg-[#DF8CFC] cursor-pointer rounded-full aspect-square w-[4.5rem] flex items-center justify-center"
@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="absolute top-2 left-0 right-0 h-[0.15rem] w-1/3 mx-auto bg-[#DF8CFC]"></div>
-        <div class="flex flex-row justify-between text-primary px-10 mb-8 w-full">
+        <div class="flex flex-row justify-between px-10 mb-8 w-full">
           <div>
             <h1 class="text-2xl font-semibold">{{ profile.title }}</h1>
             <h3 class="text-1xl">{{ profile.subtitle }}</h3>
@@ -25,7 +25,7 @@
             <Icon icon="fa6-solid:paper-plane" />
           </div>
         </div>
-        <div class="flex flex-row justify-between text-primary px-10 mb-8">
+        <div class="flex flex-row justify-between px-10 mb-8">
           <div>
             <h2 class="text-1xl font-bold">Location</h2>
             <h3 class="text-1xl">{{ profile.location }}</h3>
@@ -35,14 +35,14 @@
           </div>
         </div>
         <div class="flex px-10 mb-8">
-          <div class="flex flex-col text-primary">
+          <div class="flex flex-col ">
             <h2 class="text-1xl font-bold">About</h2>
             <p class="text-1xl mb-2">{{ profile.about }}</p>
             <p class="text-1xl font-semibold">Read more</p>
           </div>
         </div>
         <div class="flex px-10 mb-8">
-          <div class="flex flex-col text-primary w-full">
+          <div class="flex flex-col w-full">
             <h2 class="text-1xl font-bold mb-2">Interests</h2>
             <div class="grid grid-cols-3 gap-2 text-center">
               <div class="border-[1px] rounded-md p-1 text-sm" v-for="(interest, index) in profile.interests"
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="flex px-10 mb-8">
-          <div class="flex flex-col text-primary">
+          <div class="flex flex-col">
             <h2 class="text-1xl font-bold mb-2">Gallery</h2>
             <div class="grid grid-cols-6 gap-2">
               <img src="@/assets/images/parker1-gallery1.png" class="col-span-3">
