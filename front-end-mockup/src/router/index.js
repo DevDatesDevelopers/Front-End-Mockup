@@ -6,6 +6,7 @@ import DatePickerView from '../views/DatePickerView.vue';
 import GenderPicker from '../views/GenderPicker.vue'
 import InterestsView from '../views/InterestsView.vue'
 import SignUpView from '../views/SignUpView.vue';
+import SignUpPage from '../views/SignUpPage.vue';
 
 const routes = [{
         path: '/',
@@ -41,6 +42,11 @@ const routes = [{
         path: '/messages',
         name: 'messages',
         component: MessagesListing
+    },
+    {
+        path: '/signuppage',
+        name: 'signuppage',
+        component: SignUpPage
     },
 ]
 
