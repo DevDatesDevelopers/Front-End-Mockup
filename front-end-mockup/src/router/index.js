@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue';
-import MessagesListing from '../views/MessagesListing.vue';
+import MessagesListing from '../views/MessagesListingView.vue';
 import DatePickerView from '../views/DatePickerView.vue';
-import GenderPicker from '../views/GenderPicker.vue'
+import GenderPicker from '../views/GenderPickerView.vue'
 import InterestsView from '../views/InterestsView.vue'
 import SignUpView from '../views/SignUpView.vue';
-import SignUpPage from '../views/SignUpPage.vue';
+import RegisterView from '../views/RegisterView.vue';
 
 const routes = [{
         path: '/',
@@ -44,9 +44,9 @@ const routes = [{
         component: MessagesListing
     },
     {
-        path: '/signuppage',
+        path: '/register',
         name: 'signuppage',
-        component: SignUpPage
+        component: RegisterView
     },
 ]
 

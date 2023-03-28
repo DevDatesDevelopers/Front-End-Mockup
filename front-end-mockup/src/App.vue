@@ -8,7 +8,7 @@
     <router-link to="/interests">Interests</router-link>
     <router-link to="/sign-up">SignUp</router-link>
     <router-link to="/datepicker">DatePicker</router-link>
-    <router-link to="/signuppage">SignUpPage</router-link>
+    <router-link to="/register">SignUpPage</router-link>
   </nav>
   <router-view/>
 </template>
