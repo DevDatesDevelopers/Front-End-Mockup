@@ -1,212 +1,137 @@
 <template>
-<div class = "container">
-  <button type="submit" class="Back-Button" >&lt;</button>
+<div class="flex flex-col items-center">
+    <div class="flex flex-row w-10/12 items-center justify-between py-4">
+        <router-link to="/gender-picker">
+            <div class="flex justify-center items-center bg-primary-purple w-10 aspect-square rounded-lg">
+                <Icon icon="material-symbols:arrow-back-ios-new-rounded" style="width:1.25rem; height:1.25rem;" class="text-primary" />
+            </div>
+        </router-link>
+        <router-link to="/">Skip</router-link>
+    </div>
+    <h2 class="text-left font-semibold w-10/12 py-4">Your interests</h2>
+    <p class="w-10/12 pb-4">Select a few of your interests and let everyone know what you're passionate about.</p>
 
-    <h1 >Your interests</h1>
-    <a class="text">Select a few of your interests and let everyone know what you're passionate about.</a>
-
-    <div v-for="(button, index) in buttons" :key="index">
-       <button @click="interactsButtons(index)" :toggle="false" class="Design-Button"
-        :class="{ 'Selected': buttonBr[index] === 1 }">
-        <Icon :icon="button.icon" class="Design-Icon" /> {{ button.name }}
+    <div class="grid grid-flow-row grid-cols-2 gap-4 [&_.selectedInterest]:bg-primary-purple [&_.selectedInterest]:border-primary-purple">
+       <button v-for="button in buttons" v-bind:value="button" @click="selectButton(button)" class="m-0 flex h-fit group btn-primary px-3 py-4" :class="{ selectedInterest: button.selected }">
+        <Icon :icon="button.icon" style="width:20px; height:20px" class="group-[.selectedInterest]:text-primary"/>  
+        <p class="group-[.selectedInterest]:text-primary float-left ml-1">{{button.name}}</p>
       </button>
     </div>
 
-    <button ref="submitButton" class="Continue-Button" :class="{ 'Selected': totalSelected === 5 }"
-      :disabled="totalSelected === 5">Submit</button>
-    <a ref="selectButton" class="Selection">{{ submitButtonCaption }}</a>
+
+    <button class="btn-continue mb-1" :disabled="totalSelected < 5">Finish</button>
+    <p class="mb-4">{{ submitButtonCaption }}</p>
   </div>
 </template>
 
-<script>
+<script setup>
 import { Icon } from '@iconify/vue';
-export default {
-  components: {
-  Icon
-  },
-  data() {
-    return {
-      buttonBr: Array(18).fill(0),
-      buttons: [
-        {
-          name: "Photography",
-          icon: "mdi-light:camera"
-        },
-        {
-          name: "Streaming",
-          icon: "mdi-light:monitor"
-        },
-        {
-          name: "Cooking",
-          icon: "ph:bowl-food"
-        },
-        {
-          name: "Running",
-          icon: "ph:person-simple-run"
-        },
-        {
-          name: "Painting",
-          icon: "ph:paint-brush"
-        },
-        {
-          name: "Football",
-          icon: "ph:soccer-ball"
-        },
-        {
-          name: "Drink",
-          icon: "arcticons:drinkable"
-        },
-        {
-          name: "Writing",
-          icon: "ph:pen"
-        },
-        {
-          name: "Reading",
-          icon: "ph:book"
-        },
-        {
-          name: "Shopping",
-          icon: "ph:shopping-cart"
-        },
-        {
-          name: "Skiing",
-          icon: "ph:snowflake"
-        },
-        {
-          name: "Tennis",
-          icon: "ph:tennis-ball"
-        },
-        {
-          name: "Swimming",
-          icon: "ph:swimming-pool"
-        },
-        {
-          name: "Traveling",
-          icon: "ph:airplane"
-        },
-        {
-          name: "Music",
-          icon: "ph:music-notes"
-        },
-        {
-          name: "Videogames",
-          icon: "ph:game-controller"
-        },
-        {
-          name: "Programming",
-          icon: "carbon:cics-program"
-        },
-        {
-          name: "Student",
-          icon: "ph:student"
-        }
-      ],
-      totalSelected: 0,
-      submitButtonCaption: "Please select only five interests"
-    };
-  },
-  methods: {
-    interactsButtons(index) {
-      if (this.buttonBr[index] === 0) {
-        this.buttonBr[index] = 1;
-        this.totalSelected++;
-      } else {
-        this.buttonBr[index] = 0;
-        this.totalSelected--;
-      }
-      if (this.totalSelected === 5) {
-        this.submitButtonCaption = "";
-      }
-      else {
-        this.submitButtonCaption = "Please select only five interests";
-      }
+import { ref } from 'vue';
+
+const buttons = ref([
+    {
+        name: "Photography",
+        icon: "mdi-light:camera",
+        selected: false
     },
-  },
-};
-</script>
+    {
+        name: "Streaming",
+        icon: "mdi-light:monitor",
+        selected: false
+    },
+    {
+        name: "Cooking",
+        icon: "ph:bowl-food",
+        selected: false
+    },
+    {
+        name: "Running",
+        icon: "ph:person-simple-run",
+        selected: false
+    },
+    {
+        name: "Painting",
+        icon: "ph:paint-brush",
+        selected: false
+    },
+    {
+        name: "Football",
+        icon: "ph:soccer-ball",
+        selected: false
+    },
+    {
+        name: "Drink",
+        icon: "arcticons:drinkable",
+        selected: false
+    },
+    {
+        name: "Writing",
+        icon: "ph:pen",
+        selected: false
+    },
+    {
+        name: "Reading",
+        icon: "ph:book",
+        selected: false
+    },
+    {
+        name: "Shopping",
+        icon: "ph:shopping-cart",
+        selected: false
+    },
+    {
+        name: "Skiing",
+        icon: "ph:snowflake",
+        selected: false
+    },
+    {
+        name: "Tennis",
+        icon: "ph:tennis-ball",
+        selected: false
+    },
+    {
+        name: "Swimming",
+        icon: "ph:swimming-pool",
+        selected: false
+    },
+    {
+        name: "Traveling",
+        icon: "ph:airplane",
+        selected: false
+    },
+    {
+        name: "Music",
+        icon: "ph:music-notes",
+        selected: false
+    },
+    {
+        name: "Videogames",
+        icon: "ph:game-controller",
+        selected: false
+    },
+    {
+        name: "Programming",
+        icon: "carbon:cics-program",
+        selected: false
+    },
+    {
+        name: "Student",
+        icon: "ph:student",
+        selected: false
+    }
+]);
+let totalSelected=ref(0);
+const submitButtonCaption=ref("Please select only five interests");
 
-<style scoped>
-
-  .container{
-    width:340px;
-    background:black;
-    display: flex;
-    flex-direction:row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  h1{
-      color: #B20CEC;
-      font-size: 30px;
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      width:100%;
-      margin-left: 1.5rem;
-  }
-
-  .text{
-      color: #B20CEC;
-      font-size: 13px;
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-      margin-left: 1.5rem;
-      margin-top: -1rem;
-  }
-
-  .Selection{
-    color: #B20CEC;
-    font-size: 12px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  }
-
-  .Back-Button{
-    background-color: #B20CEC; 
-    color: #1E1E1E;
-    border: 1px solid black;
-    border-radius: 12px;
-    font-size: 20px;
-    width: 48px;
-    height: 44px;
-    margin-right: 15rem;
-    margin-top: 2rem;
-  }
-
-  .Design-Button{
-    text-align: left;
-    width: 140px;
-    height: 47px;
-    border: 1px solid #EAEAE6;
-    border-radius: 12px;
-    background: #1E1E1E; 
-    color: #B20CEC;
-    font-size: 15px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  }
-
-  .Design-Icon{
-      display: inline;
-      font-size: 1.5rem; 
-      padding-left: 5px;
-      padding-bottom: 5px;
-  }
-
-  button.Selected{
-    background-color: #B20CEC ; 
-    color: #1E1E1E;
-    border: 1px solid black;
-    border-radius: 12px;
-    box-shadow: 5px 10px 18px #f8008850;
+function selectButton(button) {
+    if(totalSelected<5){
+        button.selected = !button.selected;
+    }
+    if(totalSelected==5 && button.selected==true){
+        button.selected=false;
     }
 
-  .Continue-Button{
-    background-color: #141414; 
-    color: #363434;
-    border: 1px solid black;
-    border-radius: 12px;
-    font-size: 15px;
-    width: 280px;
-    height: 55px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  }
-</style>
+    totalSelected=Array.from(buttons.value).filter(item=>item.selected==true).length;
+}
+</script>
+

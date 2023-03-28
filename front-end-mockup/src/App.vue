@@ -1,6 +1,6 @@
 
 <template>
-  <nav class="bg-black text-white flex gap-4">
+  <nav class="bg-black text-white flex gap-4 overflow-auto">
     <router-link to="/">Home</router-link>
     <router-link to="/profile">Profile</router-link>
     <router-link to="/messages">Messages</router-link>
@@ -30,6 +30,7 @@
 #app {
   max-width: 400px;
   min-height: 100vh;
+  height: fit-content;
   position: relative;
   margin-left: auto;
   margin-right: auto;

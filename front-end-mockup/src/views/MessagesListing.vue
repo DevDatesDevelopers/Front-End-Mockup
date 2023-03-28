@@ -1,8 +1,8 @@
 <template>
     <div class="message-page-container flex flex-col items-center">
-      <h2 class="text-left font-semibold w-11/12 py-4">Messages</h2>
+      <h2 class="text-left font-semibold w-10/12 py-4">Messages</h2>
 
-      <div id="search-box" class="w-11/12 flex flex-col items-center justify-center mb-4">          
+      <div id="search-box" class="w-10/12 flex flex-col items-center justify-center mb-4">          
         <input class="w-full bg-[#1E1E1E] border rounded-lg leading-8 px-6 py-2 pl-11" type="text" v-model="input" placeholder="Search" />
         <span class="absolute self-start ml-4">
           <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,7 +11,7 @@
         </span>  
       </div>
 
-        <div id="activity-slider" class="w-full ml-[8.5%] py-4">
+        <div id="activity-slider" class="w-full ml-[17%] py-4">
             <h3 class="pb-4">Activities</h3>
             <div id="slider-containter" class="flex flex-row overflow-x-auto scrollbar-hide">
               <div class="message-preview flex-none pr-6" v-for="(profile, index) in profiles" :key="index">
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="messages-list w-11/12">
+        <div class="messages-list w-10/12">
             <h3 class="pb-4">Messages</h3>
             <div class="message-preview flex mb-4 flex-row justify-center" v-for="chat in filteredList()" :key="chat">
                 <img :src="require(`@/assets/images/${chat.image}`)" class="aspect-square h-[4rem] rounded-full">
@@ -29,7 +29,7 @@
                   <h4>{{chat.name}}</h4>
                   <p>{{chat.lastMessage}}</p>
                   <p>{{chat.timeLastSent}}</p>
-                  <p v-if="chat.unreadMessages>0" class="w-6 bg-secondary-purple font-bold rounded-full aspect-square text-center justify-self-end pt-[2px]" >{{chat.unreadMessages}}</p>
+                  <p v-if="chat.unreadMessages>0" class="w-6 bg-secondary-purple text-primary font-bold rounded-full aspect-square text-center justify-self-end pt-[2px]" >{{chat.unreadMessages}}</p>
                 </div>
             </div>
         </div>

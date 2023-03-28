@@ -7,9 +7,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        "primary": "#000",
-        "white": "#fff",
-        "secondary-purple": "#8507B2",
+        "primary": "#000000",
+        "white": "#ffffff",
+        // "secondary-purple": "#8507B2",
+        "secondary-purple": "#cc3eff",
         "content": "#A0A0A0",
         "primary-white": "#E9DADA",
         "primary-black": "#1E1E1E",
