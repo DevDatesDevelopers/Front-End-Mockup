@@ -17,16 +17,19 @@
         <p class="group-[.selectedInterest]:text-primary float-left ml-1">{{button.name}}</p>
       </button>
     </div>
-
-
     <button class="btn-continue mb-1" :disabled="totalSelected < 5">Finish</button>
     <p class="mb-4">{{ submitButtonCaption }}</p>
   </div>
+
+
+  <NavigationMenu />
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
+import NavigationMenu from "./NavigationMenuComponent.vue";
+
 
 const buttons = ref([
     {
