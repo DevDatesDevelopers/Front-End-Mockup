@@ -43,7 +43,7 @@ module.exports = {
 
         addBase({
           ':root': extractColorVars(theme('colors')),
-          'body': { backgroundColor: theme('colors.primary'), color: theme('colors.primary-purple'), overflowX: 'hidden', fontFamily: theme('fontFamily.roboto') },
+          'body': { backgroundColor: theme('colors.primary'), color: theme('colors.primary-purple'), overflowX: 'hidden' },
           'h1': {
             fontSize: 'clamp(29px, 4.5vw, 60px)',
             lineHeight: '1.1em',

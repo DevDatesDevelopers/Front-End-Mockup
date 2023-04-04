@@ -1,39 +1,20 @@
 <template>
-    <div class="bg-[var(--clr-primary)] max-w-md mx-auto p-12">
-        
-        <section class="mx-auto text-center w-40 mb-4">
-            <div class="relative mb-6">
-                <img class="w-32 h-32 object-cover rounded-3xl mx-auto" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80" alt="No Image">
-                
-                <button class="
-                    bg-[var(--clr-purple1)] 
-                    w-fit h-fit
-                    border-[2.5px] border-[var(--clr-white)] rounded-full
-                    absolute -bottom-4 right-2 
-                    p-2">
-
-                    <Icon class="text-[var(--clr-white)] h-6 w-6" icon="jam:camera-f"/>
-                </button>
+    <div class="flex flex-col justify-center items-center">
+        <section class="text-center w-10/12 mb-4">
+            <div class="my-6 flex flex-col items-center">
+                <div id="profileImageContainter" class="w-24 aspect-square bg-content rounded-xl">
+                    <span class="cursor-pointer absolute mt-16 ml-16 block w-fit bg-primary-purple text-white p-2 rounded-full border-[3px]">
+                        <Icon icon="jam:camera-f" style="width: 25px; height: 25px;" class=""/>
+                    </span>
+                </div>
             </div>
-            
-            <h2 class="text-[var(--clr-white)] text-xl mb-1">
-                Boyko, 14
-            </h2>
-
-            <p class="text-[var(--clr-content)] leading-4">
-                I love the sound of money and gold
-            </p>
+            <h3 class="mb-1 font-semibold">Boyko, 14</h3>
+            <p class="">I love the sound of money and gold</p>
         </section>
 
         <section class="flex justify-between text-center items-start">
                 <div class="py-2">
-                    <button class="
-                        bg-[var(--clr-black1)] 
-                        w-fit h-fit 
-                        border border-[var(--clr-white)] rounded-2xl 
-                        mx-auto 
-                        p-2 mb-1">
-
+                    <button class="bg-[var(--clr-black1)] w-fit h-fit border border-[var(--clr-white)] rounded-2xl mx-auto p-2 mb-1">
                         <Icon class="text-[var(--clr-secondary)] w-8 h-8 mx-auto" icon="heroicons-outline:adjustments-horizontal"/>
                     </button>
                     

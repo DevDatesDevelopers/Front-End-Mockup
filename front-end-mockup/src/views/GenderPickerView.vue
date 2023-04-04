@@ -8,7 +8,7 @@
     </div>
     <h2 class="text-left font-semibold w-10/12 py-4">I am a</h2>
 
-    <div class="pt-4 flex flex-col justify-between w-10/12 pc:max-h-[50vh] pc:overflow-y-scroll pc:scrollbar-hide">
+    <div class="pt-4 flex flex-col justify-between w-10/12 pc:max-h-[50vh] pc:overflow-y-scroll scrollbar-hide">
       <div class="flex flex-col justify-center [&_.selected]:bg-primary-purple [&_.selected]:border-primary-purple">
         <button :id="item.id" v-for="item in options" v-bind:value="item" v-bind:class="selected" class="group btn-primary" :class="{selected: item.active }" @click="selectItem(item)">
           <h5 class="group-[.selected]:text-primary float-left m-0">{{item.name}}</h5>

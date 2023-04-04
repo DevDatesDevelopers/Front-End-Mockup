@@ -11,8 +11,8 @@
     <h2 class="text-left font-semibold w-10/12 py-4">Your interests</h2>
     <p class="w-10/12 pb-4">Select a few of your interests and let everyone know what you're passionate about.</p>
 
-    <div class="grid grid-flow-row grid-cols-2 gap-4 [&_.selectedInterest]:bg-primary-purple [&_.selectedInterest]:border-primary-purple">
-       <button v-for="button in buttons" v-bind:value="button" @click="selectButton(button)" class="m-0 flex h-fit group btn-primary px-3 py-4" :class="{ selectedInterest: button.selected }">
+    <div class="grid grid-flow-row grid-cols-2 gap-4 gap-x-5 [&_.selectedInterest]:bg-primary-purple [&_.selectedInterest]:border-primary-purple">
+       <button v-for="button in buttons" v-bind:value="button" @click="selectButton(button)" class="m-0 flex h-fit group btn-primary px-4 py-3" :class="{ selectedInterest: button.selected }">
         <Icon :icon="button.icon" style="width:20px; height:20px" class="group-[.selectedInterest]:text-primary"/>  
         <p class="group-[.selectedInterest]:text-primary float-left ml-1">{{button.name}}</p>
       </button>

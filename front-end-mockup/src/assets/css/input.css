@@ -58,6 +58,12 @@
   .btn-continue{
     @apply w-10/12 bg-primary-purple text-primary font-semibold rounded-2xl py-4 px-6 my-6 hover:bg-secondary-purple disabled:bg-primary-black disabled:text-content;
   }
+
+  .days{
+    @apply list-none flex flex-wrap text-center px-4
+    [&>li]:cursor-pointer [&>li]:w-fit [&>li]:aspect-square [&>li]:p-1 [&>li]:rounded-full [&>li]:m-2
+    [&>.active]:bg-primary-purple [&>.active]:text-white [&>.active]:font-semibold
+  }
 }
 
 .scrollbar-hide::-webkit-scrollbar {
