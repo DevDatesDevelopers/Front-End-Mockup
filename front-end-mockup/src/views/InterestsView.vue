@@ -133,5 +133,21 @@ function selectButton(button) {
 
     totalSelected=Array.from(buttons.value).filter(item=>item.selected==true).length;
 }
+function requests() {
+  try {
+    fetch("http://localhost:5219/Interest/interests")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+requests();
 </script>
 
