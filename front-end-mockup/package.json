@@ -8,8 +8,12 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.16",
+    "assert": "^2.0.0",
+    "console-browserify": "^1.2.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13",
+    "firebase": "^9.22.2",
+    "pinia": "^2.1.4",
+    "vue": "^3.3.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {

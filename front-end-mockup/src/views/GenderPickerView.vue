@@ -26,7 +26,7 @@
       </select> -->
     </div>
 
-    <button class="btn-continue" :disabled="selected==''">Continue</button>
+    <button class="btn-continue" @click="routing()" :disabled="selected==''">Continue</button>
       
   </div>
 </template>
@@ -34,6 +34,8 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
+import { useUserStore } from '/userStore';
+import  router from '../router';
 
 let options = ref([
     { name: "Man", active: false, id: "man-select" },
@@ -69,5 +71,10 @@ function selectItem(item){
     selected=item.id;
   }
 }
-
+function routing(){
+    const store = useUserStore();
+    store.selected = selected;
+    console.log(store.selected);
+    router.push('/sexual');
+}
 </script>

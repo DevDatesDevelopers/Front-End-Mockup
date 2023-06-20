@@ -7,6 +7,7 @@ import GenderPicker from '../views/GenderPickerView.vue'
 import InterestsView from '../views/InterestsView.vue'
 import SignUpView from '../views/SignUpView.vue';
 import RegisterView from '../views/RegisterView.vue';
+import SexualInterestView from '../views/SexualInterestView';
 
 const routes = [{
         path: '/',
@@ -48,6 +49,11 @@ const routes = [{
         name: 'signuppage',
         component: RegisterView
     },
+    {
+        path: '/sexual',
+        name: 'Sexual',
+        component: SexualInterestView
+    }
 ]
 
 const router = createRouter({
