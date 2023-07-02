@@ -8,8 +8,8 @@
                     </span>
                 </div>
             </div>
-            <h3 class="mb-1 font-semibold">Boyko, 14</h3>
-            <p class="">I love the sound of money and gold</p>
+            <h3 class="mb-1 font-semibold"></h3>
+            <p class="">{{ name }}</p>
         </section>
 
         <section class="flex justify-between text-center items-start">
@@ -60,5 +60,9 @@
 </style>
 
 <script setup>
+import { ref } from 'vue';
     import {Icon} from '@iconify/vue';
+    import { useUserStore } from '/userStore';
+    const store = useUserStore();
+    let name = ref(store.firstName);
 </script>

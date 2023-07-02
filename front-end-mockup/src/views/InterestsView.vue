@@ -82,10 +82,11 @@ function routing(){
     console.log(store.user.uid);
     let user = {};
     user.id = store.user.uid;
+    user.email = store.user.email;
     user.firstName  =store.firstName;
     user.sexualInterest = store.seaxualInterest;
     user.lastName = store.lastName;
-   // user.birthdate = store.birthDate;
+    user.birthdate = store.birthDate;
     user.interests = store.interests;
     user.gender = store.selected;
     
@@ -95,7 +96,7 @@ create(user);
 }
 
 function create(user){
-  fetch('http://localhost:5219/User/addUser/user', {
+  fetch('http://localhost:5219/User/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

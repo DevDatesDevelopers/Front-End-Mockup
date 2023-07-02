@@ -182,8 +182,9 @@ function activateClass() {
 
             this.className += " active";
             day = this.innerText
-            var birthdate = new Date(year, parseInt(month), parseInt(day));
-            birthDate.value = `${birthdate.getDate()}-${birthdate.getMonth()}-${birthdate.getFullYear()}`;
+            var birthdate = new Date(year, parseInt(month) - 1, parseInt(day));
+var formattedDate = birthdate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+birthDate.value = formattedDate;
             console.log(birthDate);
         });
     }
@@ -192,7 +193,7 @@ function routing(){
     const store = useUserStore();
     store.firstName = this.firstName;
     store.lastName = this.lastName;
-    store.birthDate = this.birthDate;
+    store.birthDate = this.birthDate.toString();
     console.log(store.firstName);
     router.push('/gender-picker');
 }

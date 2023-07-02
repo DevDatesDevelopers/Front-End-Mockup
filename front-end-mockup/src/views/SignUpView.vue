@@ -57,7 +57,7 @@
 import { getAuth, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 import { useUserStore } from '/userStore';
 import { log } from 'console';
-import  router from '../router';
+import router from '../router';
 
 
 
@@ -94,21 +94,26 @@ async function sign() {
     requests(store.user.uid)
         .then(data => {
             console.log(data);
-            if (data == undefined) {
+            if (!data) {
                 CreateAnAccount();
             }
+            else {             
+                store.firstName = data.shortInfo.name;               
+                router.push('/profile');
+            }
         }).catch(error => {
-            //console.error(error);
-            // Handle the error
+
         });;
 
 }
 async function requests(id) {
+
     return new Promise((resolve, reject) => {
         fetch("http://localhost:5219/User/short/" + id)
             .then(response => response.status == 200 ? response.json() : response)
             .then(data => {
-                resolve(data?.shortInfo?.name);
+
+                resolve(data);
             })
             .catch(error => {
                 reject(error);
